@@ -1,0 +1,45 @@
+﻿@model IEnumerable<phanmemtinhhaophi.Models.Congtrinh_Congviec>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Công Trình_Công Việc</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Macongtrinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Macongviec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Macongtrinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Macongviec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Delete", "Delete", new { id=item.Macongtrinh/item.Macongviec })
+        </td>
+    </tr>
+}
+
+</table>

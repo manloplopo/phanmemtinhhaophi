@@ -1,0 +1,45 @@
+﻿@model IEnumerable<phanmemtinhhaophi.Models.Congviec>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Công Việc</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Macongviec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tencongviec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ghichu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Macongviec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tencongviec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ghichu)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Macongviec })
+        </td>
+    </tr>
+}
+
+</table>

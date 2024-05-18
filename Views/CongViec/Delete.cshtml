@@ -1,0 +1,51 @@
+﻿@model phanmemtinhhaophi.Models.Congviec
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>
+    Bạn muốn xóa dữ liệu này
+</h3>
+<div>
+    <h4>Công Việc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Macongviec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Macongviec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tencongviec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tencongviec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ghichu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ghichu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

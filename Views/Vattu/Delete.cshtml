@@ -1,0 +1,65 @@
+﻿@model phanmemtinhhaophi.Models.Vattu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có muốn xóa dữ liệu này?</h3>
+<div>
+    <h4>Vật tư</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mavattu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mavattu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenvattu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenvattu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quycach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quycach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donvitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

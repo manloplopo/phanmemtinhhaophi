@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="phanmemtinhhaophivatlieuxaydungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Congtrinh">
+          <Key>
+            <PropertyRef Name="Macongtrinh" />
+          </Key>
+          <Property Name="Macongtrinh" Type="int" Nullable="false" />
+          <Property Name="Tencongtrinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tenchudautu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tonggiatri" Type="nvarchar" MaxLength="50" />
+          <Property Name="Diadiemcongtrinh" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Congtrinh_Congviec">
+          <Key>
+            <PropertyRef Name="Macongtrinh" />
+            <PropertyRef Name="Macongviec" />
+          </Key>
+          <Property Name="Macongtrinh" Type="int" Nullable="false" />
+          <Property Name="Macongviec" Type="int" Nullable="false" />
+          <Property Name="Soluong" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Congviec">
+          <Key>
+            <PropertyRef Name="Macongviec" />
+          </Key>
+          <Property Name="Macongviec" Type="int" Nullable="false" />
+          <Property Name="Tencongviec" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ghichu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dinhmuc">
+          <Key>
+            <PropertyRef Name="Macongviec" />
+            <PropertyRef Name="Mavattu" />
+          </Key>
+          <Property Name="Macongviec" Type="int" Nullable="false" />
+          <Property Name="Mavattu" Type="int" Nullable="false" />
+          <Property Name="Soluong" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Vattu">
+          <Key>
+            <PropertyRef Name="Mavattu" />
+          </Key>
+          <Property Name="Mavattu" Type="int" Nullable="false" />
+          <Property Name="Tenvattu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quycach" Type="nvarchar" MaxLength="50" />
+          <Property Name="Donvitinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dongia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Congtrinh_Congviec_Congtrinh">
+          <End Role="Congtrinh" Type="Self.Congtrinh" Multiplicity="1" />
+          <End Role="Congtrinh_Congviec" Type="Self.Congtrinh_Congviec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congtrinh">
+              <PropertyRef Name="Macongtrinh" />
+            </Principal>
+            <Dependent Role="Congtrinh_Congviec">
+              <PropertyRef Name="Macongtrinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Congtrinh_Congviec_Congviec">
+          <End Role="Congviec" Type="Self.Congviec" Multiplicity="1" />
+          <End Role="Congtrinh_Congviec" Type="Self.Congtrinh_Congviec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Principal>
+            <Dependent Role="Congtrinh_Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dinhmuc_Congviec">
+          <End Role="Congviec" Type="Self.Congviec" Multiplicity="1" />
+          <End Role="Dinhmuc" Type="Self.Dinhmuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Principal>
+            <Dependent Role="Dinhmuc">
+              <PropertyRef Name="Macongviec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dinhmuc_Vattu">
+          <End Role="Vattu" Type="Self.Vattu" Multiplicity="1" />
+          <End Role="Dinhmuc" Type="Self.Dinhmuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vattu">
+              <PropertyRef Name="Mavattu" />
+            </Principal>
+            <Dependent Role="Dinhmuc">
+              <PropertyRef Name="Mavattu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="phanmemtinhhaophivatlieuxaydungModelStoreContainer">
+          <EntitySet Name="Congtrinh" EntityType="Self.Congtrinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Congtrinh_Congviec" EntityType="Self.Congtrinh_Congviec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Congviec" EntityType="Self.Congviec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dinhmuc" EntityType="Self.Dinhmuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vattu" EntityType="Self.Vattu" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Congtrinh_Congviec_Congtrinh" Association="Self.FK_Congtrinh_Congviec_Congtrinh">
+            <End Role="Congtrinh" EntitySet="Congtrinh" />
+            <End Role="Congtrinh_Congviec" EntitySet="Congtrinh_Congviec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Congtrinh_Congviec_Congviec" Association="Self.FK_Congtrinh_Congviec_Congviec">
+            <End Role="Congviec" EntitySet="Congviec" />
+            <End Role="Congtrinh_Congviec" EntitySet="Congtrinh_Congviec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dinhmuc_Congviec" Association="Self.FK_Dinhmuc_Congviec">
+            <End Role="Congviec" EntitySet="Congviec" />
+            <End Role="Dinhmuc" EntitySet="Dinhmuc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dinhmuc_Vattu" Association="Self.FK_Dinhmuc_Vattu">
+            <End Role="Vattu" EntitySet="Vattu" />
+            <End Role="Dinhmuc" EntitySet="Dinhmuc" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="phanmemtinhhaophivatlieuxaydungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Congtrinh">
+          <Key>
+            <PropertyRef Name="Macongtrinh" />
+          </Key>
+          <Property Name="Macongtrinh" Type="Int32" Nullable="false" />
+          <Property Name="Tencongtrinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tenchudautu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tonggiatri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Diadiemcongtrinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Congtrinh_Congviec" Relationship="Self.FK_Congtrinh_Congviec_Congtrinh" FromRole="Congtrinh" ToRole="Congtrinh_Congviec" />
+        </EntityType>
+        <EntityType Name="Congtrinh_Congviec">
+          <Key>
+            <PropertyRef Name="Macongtrinh" />
+            <PropertyRef Name="Macongviec" />
+          </Key>
+          <Property Name="Macongtrinh" Type="Int32" Nullable="false" />
+          <Property Name="Macongviec" Type="Int32" Nullable="false" />
+          <Property Name="Soluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Congtrinh" Relationship="Self.FK_Congtrinh_Congviec_Congtrinh" FromRole="Congtrinh_Congviec" ToRole="Congtrinh" />
+          <NavigationProperty Name="Congviec" Relationship="Self.FK_Congtrinh_Congviec_Congviec" FromRole="Congtrinh_Congviec" ToRole="Congviec" />
+        </EntityType>
+        <EntityType Name="Congviec">
+          <Key>
+            <PropertyRef Name="Macongviec" />
+          </Key>
+          <Property Name="Macongviec" Type="Int32" Nullable="false" />
+          <Property Name="Tencongviec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ghichu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Congtrinh_Congviec" Relationship="Self.FK_Congtrinh_Congviec_Congviec" FromRole="Congviec" ToRole="Congtrinh_Congviec" />
+          <NavigationProperty Name="Dinhmuc" Relationship="Self.FK_Dinhmuc_Congviec" FromRole="Congviec" ToRole="Dinhmuc" />
+        </EntityType>
+        <EntityType Name="Dinhmuc">
+          <Key>
+            <PropertyRef Name="Macongviec" />
+            <PropertyRef Name="Mavattu" />
+          </Key>
+          <Property Name="Macongviec" Type="Int32" Nullable="false" />
+          <Property Name="Mavattu" Type="Int32" Nullable="false" />
+          <Property Name="Soluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Congviec" Relationship="Self.FK_Dinhmuc_Congviec" FromRole="Dinhmuc" ToRole="Congviec" />
+          <NavigationProperty Name="Vattu" Relationship="Self.FK_Dinhmuc_Vattu" FromRole="Dinhmuc" ToRole="Vattu" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vattu">
+          <Key>
+            <PropertyRef Name="Mavattu" />
+          </Key>
+          <Property Name="Mavattu" Type="Int32" Nullable="false" />
+          <Property Name="Tenvattu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quycach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Donvitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dongia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dinhmuc" Relationship="Self.FK_Dinhmuc_Vattu" FromRole="Vattu" ToRole="Dinhmuc" />
+        </EntityType>
+        <Association Name="FK_Congtrinh_Congviec_Congtrinh">
+          <End Role="Congtrinh" Type="Self.Congtrinh" Multiplicity="1" />
+          <End Role="Congtrinh_Congviec" Type="Self.Congtrinh_Congviec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congtrinh">
+              <PropertyRef Name="Macongtrinh" />
+            </Principal>
+            <Dependent Role="Congtrinh_Congviec">
+              <PropertyRef Name="Macongtrinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Congtrinh_Congviec_Congviec">
+          <End Role="Congviec" Type="Self.Congviec" Multiplicity="1" />
+          <End Role="Congtrinh_Congviec" Type="Self.Congtrinh_Congviec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Principal>
+            <Dependent Role="Congtrinh_Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dinhmuc_Congviec">
+          <End Role="Congviec" Type="Self.Congviec" Multiplicity="1" />
+          <End Role="Dinhmuc" Type="Self.Dinhmuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Congviec">
+              <PropertyRef Name="Macongviec" />
+            </Principal>
+            <Dependent Role="Dinhmuc">
+              <PropertyRef Name="Macongviec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dinhmuc_Vattu">
+          <End Role="Vattu" Type="Self.Vattu" Multiplicity="1" />
+          <End Role="Dinhmuc" Type="Self.Dinhmuc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vattu">
+              <PropertyRef Name="Mavattu" />
+            </Principal>
+            <Dependent Role="Dinhmuc">
+              <PropertyRef Name="Mavattu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="phanmemtinhhaophivatlieuxaydungEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Congtrinh" EntityType="Self.Congtrinh" />
+          <EntitySet Name="Congtrinh_Congviec" EntityType="Self.Congtrinh_Congviec" />
+          <EntitySet Name="Congviec" EntityType="Self.Congviec" />
+          <EntitySet Name="Dinhmuc" EntityType="Self.Dinhmuc" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Vattu" EntityType="Self.Vattu" />
+          <AssociationSet Name="FK_Congtrinh_Congviec_Congtrinh" Association="Self.FK_Congtrinh_Congviec_Congtrinh">
+            <End Role="Congtrinh" EntitySet="Congtrinh" />
+            <End Role="Congtrinh_Congviec" EntitySet="Congtrinh_Congviec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Congtrinh_Congviec_Congviec" Association="Self.FK_Congtrinh_Congviec_Congviec">
+            <End Role="Congviec" EntitySet="Congviec" />
+            <End Role="Congtrinh_Congviec" EntitySet="Congtrinh_Congviec" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dinhmuc_Congviec" Association="Self.FK_Dinhmuc_Congviec">
+            <End Role="Congviec" EntitySet="Congviec" />
+            <End Role="Dinhmuc" EntitySet="Dinhmuc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dinhmuc_Vattu" Association="Self.FK_Dinhmuc_Vattu">
+            <End Role="Vattu" EntitySet="Vattu" />
+            <End Role="Dinhmuc" EntitySet="Dinhmuc" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="phanmemtinhhaophivatlieuxaydungModelStoreContainer" CdmEntityContainer="phanmemtinhhaophivatlieuxaydungEntities">
+          <EntitySetMapping Name="Congtrinh">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.Congtrinh">
+              <MappingFragment StoreEntitySet="Congtrinh">
+                <ScalarProperty Name="Macongtrinh" ColumnName="Macongtrinh" />
+                <ScalarProperty Name="Tencongtrinh" ColumnName="Tencongtrinh" />
+                <ScalarProperty Name="Tenchudautu" ColumnName="Tenchudautu" />
+                <ScalarProperty Name="Tonggiatri" ColumnName="Tonggiatri" />
+                <ScalarProperty Name="Diadiemcongtrinh" ColumnName="Diadiemcongtrinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Congtrinh_Congviec">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.Congtrinh_Congviec">
+              <MappingFragment StoreEntitySet="Congtrinh_Congviec">
+                <ScalarProperty Name="Macongtrinh" ColumnName="Macongtrinh" />
+                <ScalarProperty Name="Macongviec" ColumnName="Macongviec" />
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Congviec">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.Congviec">
+              <MappingFragment StoreEntitySet="Congviec">
+                <ScalarProperty Name="Macongviec" ColumnName="Macongviec" />
+                <ScalarProperty Name="Tencongviec" ColumnName="Tencongviec" />
+                <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dinhmuc">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.Dinhmuc">
+              <MappingFragment StoreEntitySet="Dinhmuc">
+                <ScalarProperty Name="Macongviec" ColumnName="Macongviec" />
+                <ScalarProperty Name="Mavattu" ColumnName="Mavattu" />
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vattu">
+            <EntityTypeMapping TypeName="phanmemtinhhaophivatlieuxaydungModel.Vattu">
+              <MappingFragment StoreEntitySet="Vattu">
+                <ScalarProperty Name="Mavattu" ColumnName="Mavattu" />
+                <ScalarProperty Name="Tenvattu" ColumnName="Tenvattu" />
+                <ScalarProperty Name="Quycach" ColumnName="Quycach" />
+                <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
+                <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

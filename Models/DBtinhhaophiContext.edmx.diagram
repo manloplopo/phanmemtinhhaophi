@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6caf23c99e59441e97cbcd60fbe0c845" Name="Diagram1">
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.Congtrinh" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.Congtrinh_Congviec" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.Congviec" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.Dinhmuc" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.sysdiagram" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="phanmemtinhhaophivatlieuxaydungModel1.Vattu" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="phanmemtinhhaophivatlieuxaydungModel1.FK_Congtrinh_Congviec_Congtrinh" ManuallyRouted="false" />
+        <AssociationConnector Association="phanmemtinhhaophivatlieuxaydungModel1.FK_Congtrinh_Congviec_Congviec" ManuallyRouted="false" />
+        <AssociationConnector Association="phanmemtinhhaophivatlieuxaydungModel1.FK_Dinhmuc_Congviec" ManuallyRouted="false" />
+        <AssociationConnector Association="phanmemtinhhaophivatlieuxaydungModel1.FK_Dinhmuc_Vattu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

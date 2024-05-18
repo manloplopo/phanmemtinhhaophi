@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2751FE7E-3453-42CC-865F-226A91F8F843}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>phanmemtinhhaophi</RootNamespace>
+    <AssemblyName>phanmemtinhhaophi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44366</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Congtrinh_CongviecController.cs" />
+    <Compile Include="Controllers\CongViecController.cs" />
+    <Compile Include="Controllers\DinhmucController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CongtrinhController.cs" />
+    <Compile Include="Controllers\VattuController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Congtrinh.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Congtrinh_Congviec.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Congviec.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBtinhhaophiContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBtinhhaophiContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBtinhhaophiContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBtinhhaophiContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBtinhhaophiContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dinhmuc.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vattu.cs">
+      <DependentUpon>DBtinhhaophiContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="css\plugins8a54.css" />
+    <Content Include="css\style8a54.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\gallery\1.jpg" />
+    <Content Include="img\gallery\2.jpg" />
+    <Content Include="img\gallery\3.jpg" />
+    <Content Include="img\gallery\4.jpg" />
+    <Content Include="img\gallery\5.jpg" />
+    <Content Include="img\gallery\6.jpg" />
+    <Content Include="img\gallery\7.jpg" />
+    <Content Include="img\gallery\8.jpg" />
+    <Content Include="img\gallery\main.jpg" />
+    <Content Include="img\logo-desktop-full.png" />
+    <Content Include="img\logo-desktop-mini.png" />
+    <Content Include="img\logo-retina-full.png" />
+    <Content Include="img\logo-retina-mini.png" />
+    <Content Include="img\models\1.jpg" />
+    <Content Include="img\models\10.jpg" />
+    <Content Include="img\models\2.jpg" />
+    <Content Include="img\models\3.jpg" />
+    <Content Include="img\models\4.jpg" />
+    <Content Include="img\models\5.jpg" />
+    <Content Include="img\models\6.jpg" />
+    <Content Include="img\models\7.jpg" />
+    <Content Include="img\models\8.jpg" />
+    <Content Include="img\models\9.jpg" />
+    <Content Include="img\related\1.jpg" />
+    <Content Include="img\related\10.jpg" />
+    <Content Include="img\related\11.jpg" />
+    <Content Include="img\related\12.jpg" />
+    <Content Include="img\related\2.jpg" />
+    <Content Include="img\related\3.jpg" />
+    <Content Include="img\related\4.jpg" />
+    <Content Include="img\related\5.jpg" />
+    <Content Include="img\related\6.jpg" />
+    <Content Include="img\related\7.jpg" />
+    <Content Include="img\related\8.jpg" />
+    <Content Include="img\related\9.jpg" />
+    <Content Include="img\user\user.jpg" />
+    <Content Include="js\init8a54.js" />
+    <Content Include="js\jquery8a54.js" />
+    <Content Include="js\plugins8a54.js" />
+    <Content Include="Models\DBtinhhaophiContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBtinhhaophiContext.edmx</DependentUpon>
+      <LastGenOutput>DBtinhhaophiContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBtinhhaophiContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBtinhhaophiContext.edmx</DependentUpon>
+      <LastGenOutput>DBtinhhaophiContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DBtinhhaophiContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBtinhhaophiContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBtinhhaophiContext.edmx.diagram">
+      <DependentUpon>DBtinhhaophiContext.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="svg\arrow.svg" />
+    <Content Include="svg\bell.svg" />
+    <Content Include="svg\billing.svg" />
+    <Content Include="svg\bookmark.svg" />
+    <Content Include="svg\bookmarked.svg" />
+    <Content Include="svg\chat.svg" />
+    <Content Include="svg\check.svg" />
+    <Content Include="svg\close.svg" />
+    <Content Include="svg\community.svg" />
+    <Content Include="svg\cube.svg" />
+    <Content Include="svg\dollar.svg" />
+    <Content Include="svg\download.svg" />
+    <Content Include="svg\enter.svg" />
+    <Content Include="svg\filter.svg" />
+    <Content Include="svg\fullscreen.svg" />
+    <Content Include="svg\home.svg" />
+    <Content Include="svg\image.svg" />
+    <Content Include="svg\info.svg" />
+    <Content Include="svg\language.svg" />
+    <Content Include="svg\like-full.svg" />
+    <Content Include="svg\like.svg" />
+    <Content Include="svg\logout.svg" />
+    <Content Include="svg\moon.svg" />
+    <Content Include="svg\new.svg" />
+    <Content Include="svg\option.svg" />
+    <Content Include="svg\person.svg" />
+    <Content Include="svg\question.svg" />
+    <Content Include="svg\search.svg" />
+    <Content Include="svg\setting.svg" />
+    <Content Include="svg\share.svg" />
+    <Content Include="svg\smallscreen.svg" />
+    <Content Include="svg\sun.svg" />
+    <Content Include="svg\thunder.svg" />
+    <Content Include="svg\trash.svg" />
+    <Content Include="svg\upload.svg" />
+    <Content Include="svg\upscale.svg" />
+    <Content Include="trangchuxaydung\css\animate.min.css" />
+    <Content Include="trangchuxaydung\css\bootstrap-grid.css" />
+    <Content Include="trangchuxaydung\css\bootstrap-grid.min.css" />
+    <Content Include="trangchuxaydung\css\bootstrap-reboot.css" />
+    <Content Include="trangchuxaydung\css\bootstrap-reboot.min.css" />
+    <Content Include="trangchuxaydung\css\bootstrap.css" />
+    <Content Include="trangchuxaydung\css\bootstrap.min.css" />
+    <Content Include="trangchuxaydung\css\default-skin.css" />
+    <Content Include="trangchuxaydung\css\font-awesome.min.css" />
+    <Content Include="trangchuxaydung\css\icomoon.css" />
+    <Content Include="trangchuxaydung\css\jquery-ui.css" />
+    <Content Include="trangchuxaydung\css\jquery.fancybox.min.css" />
+    <Content Include="trangchuxaydung\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="trangchuxaydung\css\meanmenu.css" />
+    <Content Include="trangchuxaydung\css\nice-select.css" />
+    <Content Include="trangchuxaydung\css\normalize.css" />
+    <Content Include="trangchuxaydung\css\owl.carousel.min.css" />
+    <Content Include="trangchuxaydung\css\responsive.css" />
+    <Content Include="trangchuxaydung\css\slick.css" />
+    <Content Include="trangchuxaydung\css\style.css" />
+    <Content Include="trangchuxaydung\images\about-img.png" />
+    <Content Include="trangchuxaydung\images\banner-bg.png" />
+    <Content Include="trangchuxaydung\images\blog-img.png" />
+    <Content Include="trangchuxaydung\images\contact-img.png" />
+    <Content Include="trangchuxaydung\images\icon-1.png" />
+    <Content Include="trangchuxaydung\images\icon-2.png" />
+    <Content Include="trangchuxaydung\images\icon-3.png" />
+    <Content Include="trangchuxaydung\images\icon-4.png" />
+    <Content Include="trangchuxaydung\images\img-1.png" />
+    <Content Include="trangchuxaydung\images\img-2.png" />
+    <Content Include="trangchuxaydung\images\img-3.png" />
+    <Content Include="trangchuxaydung\images\logo.png" />
+    <Content Include="trangchuxaydung\images\play-icon.png" />
+    <Content Include="trangchuxaydung\images\quick-icon.png" />
+    <Content Include="trangchuxaydung\js\bootstrap.bundle.js" />
+    <Content Include="trangchuxaydung\js\bootstrap.bundle.min.js" />
+    <Content Include="trangchuxaydung\js\bootstrap.js" />
+    <Content Include="trangchuxaydung\js\bootstrap.min.js" />
+    <Content Include="trangchuxaydung\js\custom.js" />
+    <Content Include="trangchuxaydung\js\jquery-3.0.0.min.js" />
+    <Content Include="trangchuxaydung\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="trangchuxaydung\js\jquery.min.js" />
+    <Content Include="trangchuxaydung\js\jquery.validate.js" />
+    <Content Include="trangchuxaydung\js\modernizer.js" />
+    <Content Include="trangchuxaydung\js\plugin.js" />
+    <Content Include="trangchuxaydung\js\popper.min.js" />
+    <Content Include="trangchuxaydung\js\slider-setting.js" />
+    <Content Include="trangchuxaydung\trangchuxaydung.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Congtrinh_Congviec\Edit.cshtml" />
+    <Content Include="Views\Congtrinh_Congviec\Details.cshtml" />
+    <Content Include="Views\Congtrinh_Congviec\Delete.cshtml" />
+    <Content Include="Views\CongViec\Create.cshtml" />
+    <Content Include="Views\CongViec\Edit.cshtml" />
+    <Content Include="Views\CongViec\Details.cshtml" />
+    <Content Include="Views\CongViec\Delete.cshtml" />
+    <Content Include="Views\Dinhmuc\Create.cshtml" />
+    <Content Include="Views\Dinhmuc\Edit.cshtml" />
+    <Content Include="Views\Dinhmuc\Details.cshtml" />
+    <Content Include="Views\Dinhmuc\Delete.cshtml" />
+    <Content Include="Views\Vattu\Create.cshtml" />
+    <Content Include="Views\Vattu\Edit.cshtml" />
+    <Content Include="Views\Vattu\Details.cshtml" />
+    <Content Include="Views\Vattu\Delete.cshtml" />
+    <Content Include="trangchuxaydung\css\.DS_Store" />
+    <Content Include="trangchuxaydung\css\bootstrap-grid.css.map" />
+    <Content Include="trangchuxaydung\css\bootstrap-grid.min.css.map" />
+    <Content Include="trangchuxaydung\css\bootstrap-reboot.css.map" />
+    <Content Include="trangchuxaydung\css\bootstrap-reboot.min.css.map" />
+    <Content Include="trangchuxaydung\css\bootstrap.css.map" />
+    <Content Include="trangchuxaydung\css\bootstrap.min.css.map" />
+    <Content Include="trangchuxaydung\js\.DS_Store" />
+    <Content Include="trangchuxaydung\js\bootstrap.bundle.js.map" />
+    <Content Include="trangchuxaydung\js\bootstrap.bundle.min.js.map" />
+    <Content Include="trangchuxaydung\js\bootstrap.js.map" />
+    <Content Include="trangchuxaydung\js\bootstrap.min.js.map" />
+    <Content Include="Views\Congtrinh_Congviec\Create.cshtml" />
+    <Content Include="Views\Congtrinh\Index.cshtml" />
+    <Content Include="Views\Congtrinh_Congviec\Index.cshtml" />
+    <Content Include="Views\CongViec\Index.cshtml" />
+    <Content Include="Views\Dinhmuc\Index.cshtml" />
+    <Content Include="Views\Vattu\Index.cshtml" />
+    <Content Include="Views\Congtrinh\Create.cshtml" />
+    <Content Include="Views\Congtrinh\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53599</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44366/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

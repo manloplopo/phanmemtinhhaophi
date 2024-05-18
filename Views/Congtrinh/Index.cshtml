@@ -1,0 +1,65 @@
+﻿@model IEnumerable<phanmemtinhhaophi.Models.Congtrinh>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <title>Phần mềm tính định mức hao phí vật tư xây dựng</title>
+<style>
+    h2{
+        text-align:center;
+
+    }
+</style>
+</head>
+<h2>Công trình</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Macongtrinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tencongtrinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenchudautu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tonggiatri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diadiemcongtrinh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Macongtrinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tencongtrinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenchudautu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tonggiatri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diadiemcongtrinh)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Macongtrinh  })
+        </td>
+    </tr>
+}
+
+</table>
